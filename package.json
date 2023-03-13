@@ -1,0 +1,10 @@
+{
+    "name": "reduxx-typescript",
+    "version": "0.1.0",
+    "private": true,
+    "lint-staged": {
+        "my-app/src/**/*.{js,jsx,ts,tsx}": "eslint --cache --fix",
+        "my-app/src/**/*.{js,jsx,ts,tsx,css,scss,md}": "prettier --write --ignore-unknown"
+    }
+
+}
