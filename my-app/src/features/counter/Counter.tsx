@@ -11,12 +11,12 @@ import {
 } from './counterSlice';
 import styles from './Counter.module.css';
 
-export function Counter() {
+export function Counter(): JSX.Element {
   const count = useAppSelector(selectCount);
   const dispatch = useAppDispatch();
   const [incrementAmount, setIncrementAmount] = useState('2');
 
-  const incrementValue = Number(incrementAmount) || 0;
+  const incrementValue = isNaN(Number(incrementAmount)) ? 0 : Number(incrementAmount);
 
   return (
     <div>
@@ -52,7 +52,7 @@ export function Counter() {
         </button>
         <button
           className={styles.asyncButton}
-          onClick={async () => await dispatch(incrementAsync(incrementValue))}
+          onClick={ () =>  dispatch(incrementAsync(incrementValue))}
         >
           Add Async
         </button>
