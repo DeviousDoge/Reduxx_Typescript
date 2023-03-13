@@ -9,8 +9,8 @@ import './index.css';
 const container = document.getElementById('root');
 
 
-if (container === null) {
-  throw new Error("Root element not found");
+  if (container === null) {
+    throw new Error("Root element not found");
 } 
 
 const root = createRoot(container);
@@ -30,9 +30,7 @@ const renderApp = async (): Promise<void> => {
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-async function main(): Promise<void> {
+debugger; (async () =>  {
   await renderApp()
-  await reportWebVitals();
-};
-
-main();
+    reportWebVitals();
+})();
